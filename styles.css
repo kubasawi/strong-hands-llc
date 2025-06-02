@@ -395,7 +395,7 @@ footer p {
 /* =====================================================
    Navbar hide/show animation when scrolling (desktop ≥769px)
    ===================================================== */
-@media (min-width: 769px) {
+@media {
   .navbar {
     transition: transform 0.3s ease-in-out;
     /* Ensures that whenever we shift it up or down, it animates smoothly */

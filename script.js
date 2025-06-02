@@ -67,11 +67,9 @@ let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-  // Only run on desktop widths
-  if (window.innerWidth >= 769) {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+    if (currentScrollY > lastScrollY && currentScrollY > 40) {
       // Scrolling down & scrolled at least 50px → hide navbar
       navbar.classList.add('hidden');
     } else {
@@ -84,8 +82,6 @@ window.addEventListener('scroll', () => {
 });
 
 window.addEventListener('resize', () => {
-  // If they resize below 769px (mobile), force the navbar visible
-  if (window.innerWidth < 769) {
     navbar.classList.remove('hidden');
   }
 });
