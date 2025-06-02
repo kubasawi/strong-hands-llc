@@ -376,4 +376,21 @@ footer p {
     align-items: center;
   }
 }
+/* =======================================
+   Desktop‐Only Overrides (screens ≥ 769px)
+   ======================================= */
+@media (min-width: 769px) {
+  /* Make the “Get a Free Estimate” button smaller on desktop */
+  .navbar .estimate-btn {
+    padding: 12px 24px;    /* shrink from 36×72 down to 12×24 */
+    font-size: 1.1rem;     /* shrink text from 3rem to 1.1rem */
+  }
+
+  /* (Optional) If the navbar still feels too “wide,” 
+     you can also slightly reduce its left/right padding here: */
+  .navbar {
+    padding: 0 10px;      /* change from 0 20px → 0 10px on desktop */
+  }
+}
+
 
