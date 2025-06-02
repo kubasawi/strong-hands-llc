@@ -357,21 +357,30 @@ footer p {
 /* ========================================
    Responsive (Mobile) Styles
    ======================================== */
+/* ========================================
+   Responsive (Mobile) Styles
+   ======================================== */
 @media (max-width: 768px) {
-  /* Show hamburger icon */
+  /* 1. Show only the hamburger icon at first */
   .navbar .menu-toggle {
     display: block;
   }
-  /* Hide desktop links */
+  /* 2. Hide the desktop‐style links entirely */
   .navbar .nav-links {
     display: none;
   }
-  /* When hamburger is clicked, show mobile links */
+  /* 3. Hide the mobile links by default (they will appear below on click) */
   .navbar .nav-links-mobile {
-    display: flex;
+    display: none;           /* keep hidden until someone clicks */
+    flex-direction: column;
+    background-color: #000;  /* same black background */
+    width: 100%;
+    position: absolute;      /* position below the navbar */
+    top: 100%;               /* right below the bottom edge of the navbar */
+    left: 0;
+    z-index: 999;            /* ensure it sits above page content */
   }
-
-  /* Stack service items on smaller screens */
+  /* 4. Stack service items on smaller screens (no change) */
   .services-container {
     flex-direction: column;
     align-items: center;
