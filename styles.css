@@ -43,7 +43,7 @@ body {
 
 /* Logo image on the left */
 .navbar img.logo {
-  height: 80px;
+  height: 120px;
 }
 
 /* Navigation links on the right */
@@ -88,9 +88,10 @@ body {
   background-color: #ff6600; /* Orange */
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 12px 24px; 
   border-radius: 4px;
   font-weight: bold;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 .navbar .estimate-btn:hover {
