@@ -1,0 +1,378 @@
+/* ========================================
+   Global Styles
+   ======================================== */
+
+/* Use a simple, readable font */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+  text-align: center; /* Center all text by default */
+  background: #f5f5f5;
+}
+
+/* Background image fixed in place, semi-transparent */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/background.png') center/cover no-repeat;
+  opacity: 0.2; /* Light transparency so content is easy to read */
+  z-index: -1;
+}
+
+/* ========================================
+   Navigation Bar (Sticky at top)
+   ======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* Black background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+/* Logo image on the left */
+.navbar img.logo {
+  height: 40px;
+}
+
+/* Navigation links on the right */
+.navbar .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Each link item */
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+/* Link styling */
+.navbar .nav-links li a {
+  color: #fff; /* White text */
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/* On hover: orange underline */
+.navbar .nav-links li a:hover {
+  color: #ff6600; /* Orange */
+}
+.navbar .nav-links li a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #ff6600; /* Orange underline */
+}
+
+/* “Get a Free Estimate” button in the nav */
+.navbar .estimate-btn {
+  background-color: #ff6600; /* Orange */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.navbar .estimate-btn:hover {
+  background-color: #e65c00; /* Slightly darker orange */
+}
+
+/* Hamburger menu icon (mobile) */
+.navbar .menu-toggle {
+  display: none; /* Hidden by default, shown on small screens */
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Navigation list for mobile (initially hidden) */
+.navbar .nav-links-mobile {
+  display: none;
+  flex-direction: column;
+  background-color: #000;
+  width: 100%;
+}
+
+/* Each mobile link */
+.navbar .nav-links-mobile li {
+  margin: 10px 0;
+}
+
+/* ========================================
+   Hero Section (Home page only)
+   ======================================== */
+.hero {
+  padding-top: 80px; /* Space for sticky nav */
+  padding-bottom: 40px;
+  background: transparent;
+  color: #111;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+.hero p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.hero .phone-numbers {
+  margin: 20px 0;
+}
+
+.hero .phone-numbers a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #ff6600; /* Orange text */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero .phone-numbers a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   Section Headings & General Content
+   ======================================== */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto; /* Center each section */
+}
+
+/* Section titles */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+section p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  color: #444;
+}
+
+/* ========================================
+   Services Section
+   ======================================== */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.service-item {
+  width: 200px;
+  text-align: center;
+}
+
+.service-item img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.service-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.service-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ========================================
+   About Us Section
+   ======================================== */
+.about-items {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-items li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ========================================
+   Gallery Carousel
+   ======================================== */
+.gallery-intro {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  display: none;  /* Hide all images by default */
+  border-radius: 8px;
+}
+
+.carousel-container img.active {
+  display: block; /* Show only the active image */
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+/* ========================================
+   Contact Section
+   ======================================== */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.contact-form button {
+  margin-top: 15px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #e65c00;
+}
+
+/* ========================================
+   Footer / Back to Top Button
+   ======================================== */
+footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Back to Top button (fixed at bottom right) */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff6600; /* Orange */
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none; /* Hidden until user scrolls */
+  z-index: 1000;
+}
+
+/* ========================================
+   Responsive (Mobile) Styles
+   ======================================== */
+@media (max-width: 768px) {
+  /* Show hamburger icon */
+  .navbar .menu-toggle {
+    display: block;
+  }
+  /* Hide desktop links */
+  .navbar .nav-links {
+    display: none;
+  }
+  /* When hamburger is clicked, show mobile links */
+  .navbar .nav-links-mobile {
+    display: flex;
+  }
+
+  /* Stack service items on smaller screens */
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

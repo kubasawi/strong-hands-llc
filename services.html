@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Strong Hands LLC – Services</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background image -->
+  <div class="background"></div>
+
+  <!-- Sticky Navigation Bar (exact same as in index.html) -->
+  <nav class="navbar">
+    <a href="index.html">
+      <img
+        src="images/logo.png"
+        alt="Strong Hands LLC Logo"
+        class="logo"
+      />
+    </a>
+    <button
+      class="estimate-btn"
+      onclick="window.location.href='contact.html';"
+    >
+      Get a Free Estimate
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <ul class="nav-links-mobile" id="nav-links-mobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Section -->
+  <section>
+    <h2>Our Services</h2>
+    <p>From structural installs to stunning accent work, our full suite of masonry solutions covers it all:</p>
+    <div class="services-container">
+      <!-- Brick & Stone Veneers -->
+      <div class="service-item">
+        <img src="images/veneer-icon.png" alt="Brick & Stone Veneers" />
+        <h3>Brick & Stone Veneers</h3>
+        <p>Add lasting beauty & durability to any façade or interior wall.</p>
+      </div>
+      <!-- Pavers -->
+      <div class="service-item">
+        <img src="images/pavers-icon.png" alt="Pavers" />
+        <h3>Pavers</h3>
+        <p>Custom driveways, walkways, patios & pool decks.</p>
+      </div>
+      <!-- Retaining Walls -->
+      <div class="service-item">
+        <img src="images/wall-icon.png" alt="Retaining Walls" />
+        <h3>Retaining Walls</h3>
+        <p>Functional, sturdy wall systems to shape and protect your land.</p>
+      </div>
+      <!-- Chimneys -->
+      <div class="service-item">
+        <img src="images/chimney-icon.png" alt="Chimneys" />
+        <h3>Chimneys</h3>
+        <p>Custom-built chimneys and fireplace surrounds for warmth & style.</p>
+      </div>
+      <!-- Interior Custom Stone Design -->
+      <div class="service-item">
+        <img src="images/interior-icon.png" alt="Interior Custom Stone Design" />
+        <h3>Interior Custom Stone Design</h3>
+        <p>Feature walls, backsplashes & bespoke installations.</p>
+      </div>
+    </div>
+
+    <p style="margin-top: 40px; color: #555;">
+      All of our work is backed by experience-driven attention to detail—and you
+      won’t deal with high-pressure sales tactics, just skilled craftsmen focused
+      on results.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Strong Hands LLC. All Rights Reserved.</p>
+    <p>
+      <strong>Phone:</strong>
+      <a href="tel:8485257377" style="color:#ff6600;">(848) 525-7377</a> • 
+      <a href="tel:7325750099" style="color:#ff6600;">(732) 575-0099</a>
+    </p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>

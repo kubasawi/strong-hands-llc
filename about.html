@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Strong Hands LLC – About Us</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background image -->
+  <div class="background"></div>
+
+  <!-- Navigation Bar (same as before) -->
+  <nav class="navbar">
+    <a href="index.html">
+      <img
+        src="images/logo.png"
+        alt="Strong Hands LLC Logo"
+        class="logo"
+      />
+    </a>
+    <button
+      class="estimate-btn"
+      onclick="window.location.href='contact.html';"
+    >
+      Get a Free Estimate
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <ul class="nav-links-mobile" id="nav-links-mobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Us Content -->
+  <section>
+    <h2>About Us</h2>
+    <h3>Our Story</h3>
+    <p>
+      Strong Hands LLC emerged from a passion for heritage masonry and modern
+      innovation. We serve both homeowners and contractors, bringing decades of
+      combined experience to every project.
+    </p>
+
+    <h3>Our Promise</h3>
+    <ul class="about-items">
+      <li><strong>Craftsmanship:</strong> We treat every stone as a work of art.</li>
+      <li><strong>Reliability:</strong> On-time, on-budget, and fully transparent.</li>
+      <li><strong>Value:</strong> Premium quality without premium prices.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Strong Hands LLC. All Rights Reserved.</p>
+    <p>
+      <strong>Phone:</strong>
+      <a href="tel:8485257377" style="color:#ff6600;">(848) 525-7377</a> • 
+      <a href="tel:7325750099" style="color:#ff6600;">(732) 575-0099</a>
+    </p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>

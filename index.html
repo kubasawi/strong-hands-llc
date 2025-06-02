@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <title>Strong Hands LLC – Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background image (fixed, semi-transparent) -->
+  <div class="background"></div>
+
+  <!-- Sticky Navigation Bar -->
+  <nav class="navbar">
+    <!-- Logo on the left -->
+    <a href="index.html">
+      <img
+        src="images/logo.png"
+        alt="Strong Hands LLC Logo"
+        class="logo"
+      />
+    </a>
+
+    <!-- “Get a Free Estimate” button -->
+    <button
+      class="estimate-btn"
+      onclick="window.location.href='contact.html';"
+    >
+      Get a Free Estimate
+    </button>
+
+    <!-- Desktop nav links -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger menu icon (mobile only) -->
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <!-- Hidden mobile nav links, shown when hamburger is clicked -->
+    <ul class="nav-links-mobile" id="nav-links-mobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Strong Hands LLC</h1>
+    <h2>Masterful Masonry & Stonework</h2>
+    <p>Servicing Monmouth, Ocean & Middlesex Counties</p>
+
+    <!-- Phone numbers -->
+    <div class="phone-numbers">
+      <a href="tel:8485257377">(848) 525-7377</a>
+      <a href="tel:7325750099">(732) 575-0099</a>
+    </div>
+
+    <!-- SEO-friendly tags for “Free Estimates” etc -->
+    <p>Free Estimates • Licensed & Insured</p>
+
+    <!-- Intro paragraph -->
+    <p>
+      At Strong Hands LLC, we blend craftsmanship, reliability and fair
+      pricing to bring your masonry visions to life. Whether you’re a
+      homeowner dreaming of a new patio or a contractor tackling a large
+      commercial build, our team delivers precision and professionalism
+      from the first brick to the final stone.
+    </p>
+    <p><em>Strong Hands – Where Flawless Craft and Dedication Make Hard Work Effortless.</em></p>
+  </header>
+
+  <!-- Footer (same on every page) -->
+  <footer>
+    <p>© <span id="year"></span> Strong Hands LLC. All Rights Reserved.</p>
+    <p>
+     <strong>Phone:</strong>
+      <a href="tel:8485257377" style="color:#ff6600;">(848) 525-7377</a> • 
+      <a href="tel:7325750099" style="color:#ff6600;">(732) 575-0099</a>
+    </p>
+  </footer>
+
+  <!-- Back to Top button -->
+  <button id="backToTop">↑</button>
+
+  <!-- Insert our JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // Auto-update year in footer
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
