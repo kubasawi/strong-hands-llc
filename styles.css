@@ -88,10 +88,10 @@ body {
   background-color: #ff6600; /* Orange */
   color: #fff;
   border: none;
-  padding: 24px 48px; 
+  padding: 10px 20px; 
   border-radius: 4px;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 .navbar .estimate-btn:hover {
@@ -123,7 +123,7 @@ body {
    Hero Section (Home page only)
    ======================================== */
 .hero {
-  padding-top: 80px; /* Space for sticky nav */
+  padding-top: 130px; /* Space for sticky nav */
   padding-bottom: 40px;
   background: transparent;
   color: #111;
@@ -392,5 +392,19 @@ footer p {
     padding: 0 10px;      /* change from 0 20px → 0 10px on desktop */
   }
 }
+/* =====================================================
+   Navbar hide/show animation when scrolling (desktop ≥769px)
+   ===================================================== */
+@media (min-width: 769px) {
+  .navbar {
+    transition: transform 0.3s ease-in-out;
+    /* Ensures that whenever we shift it up or down, it animates smoothly */
+  }
+  .navbar.hidden {
+    transform: translateY(-100%);
+    /* Moves the navbar completely off‐screen (upwards) */
+  }
+}
+
 
 

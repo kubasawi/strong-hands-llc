@@ -59,3 +59,33 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+/* ============================================
+   Hide Navbar on Scroll‐Down, Show on Scroll‐Up
+   (Desktop screens ≥ 769px only)
+   ============================================ */
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  // Only run on desktop widths
+  if (window.innerWidth >= 769) {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Scrolling down & scrolled at least 50px → hide navbar
+      navbar.classList.add('hidden');
+    } else {
+      // Scrolling up (or near top) → show navbar
+      navbar.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }
+});
+
+window.addEventListener('resize', () => {
+  // If they resize below 769px (mobile), force the navbar visible
+  if (window.innerWidth < 769) {
+    navbar.classList.remove('hidden');
+  }
+});
