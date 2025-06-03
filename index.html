@@ -2,102 +2,178 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-  <title>Strong Hands LLC – Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strong Hands LLC</title>
+
+  <!-- 1) Load Agency FB from your local fonts folder -->
+  <style>
+    @font-face {
+      font-family: "AgencyFB";
+      src: url("fonts/AgencyFB.woff2") format("woff2"),
+           url("fonts/AgencyFB.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <!-- 2) Main CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <!-- Background image (fixed, semi-transparent) -->
-  <div class="background"></div>
-
-  <!-- Sticky Navigation Bar -->
+  <!-- --------------- NAVBAR --------------- -->
   <nav class="navbar">
-    <!-- Logo on the left -->
-    <a href="index.html">
-      <img
-        src="images/logo.png"
-        alt="Strong Hands LLC Logo"
-        class="logo"
-      />
-    </a>
-
-    <!-- “Get a Free Estimate” button -->
-    <button
-      class="estimate-btn"
-      onclick="window.location.href='contact.html';"
-    >
-      Get a Free Estimate
-    </button>
-
-    <!-- Desktop nav links -->
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <!-- Hamburger menu icon (mobile only) -->
-    <div class="menu-toggle" id="mobile-menu">☰</div>
-    <!-- Hidden mobile nav links, shown when hamburger is clicked -->
-    <ul class="nav-links-mobile" id="nav-links-mobile">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Strong Hands LLC</h1>
-    <h2>Masterful Masonry & Stonework</h2>
-    <p>Servicing Monmouth, Ocean & Middlesex Counties</p>
-
-    <!-- Phone numbers -->
-    <div class="phone-numbers">
-      <a href="tel:8485257377">(848) 525-7377</a>
-      <a href="tel:7325750099">(732) 575-0099</a>
+    <!-- Left flex area: Logo -->
+    <div class="navbar-left">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Strong Hands Logo" class="logo" />
+      </a>
     </div>
 
-    <!-- SEO-friendly tags for “Free Estimates” etc -->
-    <p>Free Estimates • Licensed & Insured</p>
+    <!-- Center flex area: “Get a Free Estimate” button -->
+    <div class="navbar-center">
+      <button class="estimate-btn">Get a Free Estimate</button>
+    </div>
 
-    <!-- Intro paragraph -->
+    <!-- Right flex area: Hamburger icon + hidden links -->
+    <div class="navbar-right">
+      <!-- Hamburger icon (always visible) -->
+      <button id="mobile-menu" class="menu-toggle" aria-label="Toggle menu">
+        &#9776;
+      </button>
+
+      <!-- Hidden dropdown links (desktop+mobile) -->
+      <ul id="nav-links-mobile" class="nav-links-mobile">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- --------------- HERO SECTION --------------- -->
+  <section class="hero">
+    <h1>STRONG HANDS LLC</h1>
+    <h2>Masterful Masonry &amp; Stonework</h2>
+    <div class="location">
+      Servicing Monmouth, Ocean &amp; Middlesex Counties
+    </div>
+    <div class="phone-numbers">
+      <a href="tel:8485257377">&#x260E; (848) 525-7377</a>
+      <span class="dot">•</span>
+      <a href="tel:7325750099">&#x260E; (732) 575-0099</a>
+    </div>
+    <div class="tagline">Free Estimates • Licensed &amp; Insured</div>
+  </section>
+
+  <!-- --------------- SERVICES --------------- -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service-item">
+        <img src="images/veneer-icon.png" alt="Brick & Stone Veneers Icon" />
+        <h3>Brick &amp; Stone Veneers</h3>
+        <p>Lasting beauty &amp; durability for any façade or interior.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/pavers-icon.png" alt="Pavers Icon" />
+        <h3>Pavers</h3>
+        <p>Custom driveways, walkways, patios &amp; pool decks.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/wall-icon.png" alt="Retaining Walls Icon" />
+        <h3>Retaining Walls</h3>
+        <p>Sturdy wall systems to shape and protect your land.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/chimney-icon.png" alt="Chimneys Icon" />
+        <h3>Chimneys</h3>
+        <p>Custom-built chimneys and fireplace surrounds.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/interior-icon.png" alt="Custom Interior Design Icon" />
+        <h3>Interior Custom Stone Design</h3>
+        <p>Feature walls, backsplashes &amp; bespoke installations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- --------------- ABOUT US --------------- -->
+  <section id="about">
+    <h2>About Us</h2>
     <p>
-      At Strong Hands LLC, we blend craftsmanship, reliability and fair
-      pricing to bring your masonry visions to life. Whether you’re a
-      homeowner dreaming of a new patio or a contractor tackling a large
-      commercial build, our team delivers precision and professionalism
-      from the first brick to the final stone.
+      Strong Hands LLC started from a passion for heritage masonry and
+      modern innovation. We serve both homeowners and contractors with
+      decades of combined experience.
     </p>
-    <p><em>Strong Hands – Where Flawless Craft and Dedication Make Hard Work Effortless.</em></p>
-  </header>
+    <ul class="about-items">
+      <li><strong>Craftsmanship:</strong> Every stone is treated as a work of art.</li>
+      <li><strong>Reliability:</strong> On-time, on-budget, and fully transparent.</li>
+      <li><strong>Value:</strong> Premium quality without premium prices.</li>
+    </ul>
+  </section>
 
-  <!-- Footer (same on every page) -->
+  <!-- --------------- GALLERY --------------- -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p class="gallery-intro">
+      Witness the detail and artistry of our recent projects. From sleek
+      paver patios to timeless brick veneers, every photo tells a story of
+      quality.
+    </p>
+    <div class="carousel-container">
+      <!-- Sample images; replace the src attributes with your own picture URLs -->
+      <img class="active" src="images/1.jpg" alt="Project 1" />
+      <img src="images/2.jpg" alt="Project 2" />
+      <img src="images/3.jpg" alt="Project 3" />
+      <img src="images/4.jpg" alt="Project 4" />
+      <button id="prevBtn">&#10094;</button>
+      <button id="nextBtn">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- --------------- CONTACT --------------- -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Free Estimates • Licensed &amp; Insured</p>
+    <p>Ready to transform your space? Let’s talk.</p>
+    <p>Call Us: (848) 525-7377 or (732) 575-0099</p>
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="Your Name" />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" />
+
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" placeholder="(XXX) XXX-XXXX" />
+
+      <label for="project">Project Type</label>
+      <select id="project">
+        <option value="">— Select —</option>
+        <option value="residential">Residential</option>
+        <option value="commercial">Commercial</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Tell us about your project..."></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <p>We proudly serve Monmouth, Ocean and Middlesex Counties.</p>
+  </section>
+
+  <!-- --------------- FOOTER --------------- -->
   <footer>
-    <p>© <span id="year"></span> Strong Hands LLC. All Rights Reserved.</p>
-    <p>
-     <strong>Phone:</strong>
-      <a href="tel:8485257377" style="color:#ff6600;">(848) 525-7377</a> • 
-      <a href="tel:7325750099" style="color:#ff6600;">(732) 575-0099</a>
-    </p>
+    <p>© 2025 Strong Hands LLC — All Rights Reserved</p>
   </footer>
 
-  <!-- Back to Top button -->
-  <button id="backToTop">↑</button>
+  <!-- --------------- BACK TO TOP BUTTON --------------- -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- Insert our JavaScript -->
+  <!-- --------------- MAIN JS --------------- -->
   <script src="script.js"></script>
-  <script>
-    // Auto-update year in footer
-    document.getElementById('year').innerText = new Date().getFullYear();
-  </script>
 </body>
 </html>
