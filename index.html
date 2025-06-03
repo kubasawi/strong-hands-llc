@@ -2,47 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
   <title>Strong Hands LLC</title>
 
-  <!-- 1) Load Agency FB from your local fonts folder -->
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Load Agency FB from your local fonts folder -->
   <style>
     @font-face {
       font-family: "AgencyFB";
-      src: url("fonts/AgencyFB.woff2") format("woff2"),
-           url("fonts/AgencyFB.woff") format("woff");
+      src: url("fonts/Agency FB V2.woff2") format("woff2"),
+           url("fonts/Agency FB V2.woff") format("woff");
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
   </style>
-
-  <!-- 2) Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- --------------- NAVBAR --------------- -->
+  <!-- Background image -->
+  <div class="background"></div>
+
+  <!-- ===============================
+       NAVBAR (same on every page)
+       =============================== -->
   <nav class="navbar">
-    <!-- Left flex area: Logo -->
+    <!-- Left: Logo (80px tall) -->
     <div class="navbar-left">
       <a href="index.html">
         <img src="images/logo.png" alt="Strong Hands Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Center flex area: “Get a Free Estimate” button -->
+    <!-- Center: “Get a Free Estimate” button -->
     <div class="navbar-center">
-      <button class="estimate-btn">Get a Free Estimate</button>
+      <button class="estimate-btn">
+        Get a Free Estimate
+      </button>
     </div>
 
-    <!-- Right flex area: Hamburger icon + hidden links -->
+    <!-- Right: Hamburger + hidden dropdown links -->
     <div class="navbar-right">
-      <!-- Hamburger icon (always visible) -->
       <button id="mobile-menu" class="menu-toggle" aria-label="Toggle menu">
-        &#9776;
+        ☰
       </button>
-
-      <!-- Hidden dropdown links (desktop+mobile) -->
       <ul id="nav-links-mobile" class="nav-links-mobile">
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
@@ -53,7 +60,7 @@
     </div>
   </nav>
 
-  <!-- --------------- HERO SECTION --------------- -->
+  <!-- ========== HERO SECTION ========== -->
   <section class="hero">
     <h1>STRONG HANDS LLC</h1>
     <h2>Masterful Masonry &amp; Stonework</h2>
@@ -68,45 +75,46 @@
     <div class="tagline">Free Estimates • Licensed &amp; Insured</div>
   </section>
 
-  <!-- --------------- SERVICES --------------- -->
+  <!-- ========== SERVICES SECTION ========== -->
   <section id="services">
     <h2>Our Services</h2>
+    <p>
+      From structural installs to stunning accent work, our full suite of masonry solutions covers it all:
+    </p>
     <div class="services-container">
       <div class="service-item">
-        <img src="images/veneer-icon.png" alt="Brick & Stone Veneers Icon" />
+        <img src="images/veneer-icon.png" alt="Brick & Stone Veneers" />
         <h3>Brick &amp; Stone Veneers</h3>
-        <p>Lasting beauty &amp; durability for any façade or interior.</p>
+        <p>Add lasting beauty &amp; durability to any façade or interior wall.</p>
       </div>
       <div class="service-item">
-        <img src="images/pavers-icon.png" alt="Pavers Icon" />
+        <img src="images/pavers-icon.png" alt="Pavers" />
         <h3>Pavers</h3>
         <p>Custom driveways, walkways, patios &amp; pool decks.</p>
       </div>
       <div class="service-item">
-        <img src="images/wall-icon.png" alt="Retaining Walls Icon" />
+        <img src="images/wall-icon.png" alt="Retaining Walls" />
         <h3>Retaining Walls</h3>
-        <p>Sturdy wall systems to shape and protect your land.</p>
+        <p>Functional, sturdy wall systems to shape and protect your land.</p>
       </div>
       <div class="service-item">
-        <img src="images/chimney-icon.png" alt="Chimneys Icon" />
+        <img src="images/chimney-icon.png" alt="Chimneys" />
         <h3>Chimneys</h3>
-        <p>Custom-built chimneys and fireplace surrounds.</p>
+        <p>Custom-built chimneys and fireplace surrounds for warmth &amp; style.</p>
       </div>
       <div class="service-item">
-        <img src="images/interior-icon.png" alt="Custom Interior Design Icon" />
+        <img src="images/interior-icon.png" alt="Interior Custom Design" />
         <h3>Interior Custom Stone Design</h3>
         <p>Feature walls, backsplashes &amp; bespoke installations.</p>
       </div>
     </div>
   </section>
 
-  <!-- --------------- ABOUT US --------------- -->
+  <!-- ========== ABOUT US SECTION ========== -->
   <section id="about">
     <h2>About Us</h2>
     <p>
-      Strong Hands LLC started from a passion for heritage masonry and
-      modern innovation. We serve both homeowners and contractors with
-      decades of combined experience.
+      Strong Hands LLC started from a passion for heritage masonry and modern innovation. We serve both homeowners and contractors with decades of combined experience.
     </p>
     <ul class="about-items">
       <li><strong>Craftsmanship:</strong> Every stone is treated as a work of art.</li>
@@ -115,16 +123,14 @@
     </ul>
   </section>
 
-  <!-- --------------- GALLERY --------------- -->
+  <!-- ========== GALLERY SECTION ========== -->
   <section id="gallery">
     <h2>Gallery</h2>
     <p class="gallery-intro">
-      Witness the detail and artistry of our recent projects. From sleek
-      paver patios to timeless brick veneers, every photo tells a story of
-      quality.
+      Witness the detail and artistry of our recent projects. From sleek paver patios to timeless brick veneers, every photo tells a story of quality.
     </p>
     <div class="carousel-container">
-      <!-- Sample images; replace the src attributes with your own picture URLs -->
+      <!-- Carousel images (match actual image paths in images/) -->
       <img class="active" src="images/1.jpg" alt="Project 1" />
       <img src="images/2.jpg" alt="Project 2" />
       <img src="images/3.jpg" alt="Project 3" />
@@ -134,7 +140,7 @@
     </div>
   </section>
 
-  <!-- --------------- CONTACT --------------- -->
+  <!-- ========== CONTACT SECTION ========== -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Free Estimates • Licensed &amp; Insured</p>
@@ -165,15 +171,19 @@
     <p>We proudly serve Monmouth, Ocean and Middlesex Counties.</p>
   </section>
 
-  <!-- --------------- FOOTER --------------- -->
+  <!-- ========== FOOTER ========== -->
   <footer>
-    <p>© 2025 Strong Hands LLC — All Rights Reserved</p>
+    <p>© <span id="year"></span> Strong Hands LLC — All Rights Reserved</p>
   </footer>
 
-  <!-- --------------- BACK TO TOP BUTTON --------------- -->
+  <!-- ========== BACK TO TOP BUTTON ========== -->
   <button id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- --------------- MAIN JS --------------- -->
+  <!-- ========== MAIN JS ========== -->
   <script src="script.js"></script>
+  <script>
+    // Auto-update year in footer
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
 </body>
 </html>

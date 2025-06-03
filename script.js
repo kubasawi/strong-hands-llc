@@ -16,7 +16,7 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
 
-// Show the image at currentIndex; hide others
+// Show only the image at currentIndex
 function updateCarousel() {
   carouselImages.forEach((img, idx) => {
     img.classList.toggle('active', idx === currentIndex);
@@ -36,18 +36,20 @@ nextBtn.addEventListener('click', () => {
 });
 
 // ========================================
-// 3) BACK TO TOP BUTTON
+// 3) BACK TO TOP BUTTON & NAVBAR HIDE/SHOW
 // ========================================
 const backToTopBtn = document.getElementById('backToTop');
+let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
+  // Back-to-top visibility
   if (window.scrollY > 200) {
     backToTopBtn.style.display = 'block';
   } else {
     backToTopBtn.style.display = 'none';
   }
 
-  // Hide navbar when scrolling down, show when scrolling up
+  // Navbar hide on scroll-down, show on scroll-up
   const currentScrollY = window.scrollY;
   if (currentScrollY > lastScrollY && currentScrollY > 50) {
     document.querySelector('.navbar').classList.add('hidden');
@@ -60,8 +62,3 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-// ========================================
-// 4) NAVBAR SCROLL TRACKER
-// ========================================
-let lastScrollY = window.scrollY;

@@ -10,7 +10,7 @@ body {
   background: #f5f5f5;
 }
 
-/* Make images scale-down to fit containers */
+/* Make images scale to fit their containers */
 img {
   max-width: 100%;
   height: auto;
@@ -27,7 +27,7 @@ img {
   background-color: #000; /* black bar */
   display: flex;
   align-items: center;
-  padding: 10px 10px;   /* small padding top/bottom and side */
+  padding: 10px 10px;   /* small padding top/bottom & side */
   z-index: 1000;
 }
 
@@ -37,7 +37,7 @@ img {
   text-align: left;
 }
 .navbar-left .logo {
-  height: 60px; /* adjust as needed; keeps bar from being too tall */
+  height: 80px; /* Logo is now 80px tall */
 }
 
 /* Center section: estimate button */
@@ -85,7 +85,7 @@ img {
   background-color: #000;
   width: 100%;
   position: absolute;
-  top: 60px;   /* sits right below the 60px‐tall navbar */
+  top: 80px;   /* sits right below the 80px‐tall navbar */
   right: 0;
   left: 0;
   z-index: 999;
@@ -120,7 +120,7 @@ img {
    3) HERO SECTION
    ======================================== */
 .hero {
-  margin-top: 60px; /* push below the 60px‐tall navbar */
+  margin-top: 80px; /* push below the 80px‐tall navbar */
   padding-top: 40px;
   padding-bottom: 40px;
   background: transparent;
@@ -130,7 +130,7 @@ img {
   font-size: 48px;
   color: #222;
   margin: 0;
-  text-transform: uppercase; /* always all caps */
+  text-transform: uppercase; /* all caps */
 }
 .hero h2 {
   font-size: 24px;
@@ -355,8 +355,6 @@ footer {
 footer p {
   margin: 0;
 }
-
-/* Back to Top button */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -375,7 +373,6 @@ footer p {
 /* ========================================
    9) NAVBAR HIDE/SHOW ON SCROLL
    ======================================== */
-/* This applies on all screen sizes */
 .navbar {
   transition: transform 0.3s ease-in-out;
 }
@@ -387,7 +384,7 @@ footer p {
    10) RESPONSIVE (MOBILE) STYLES
    ======================================== */
 @media (max-width: 768px) {
-  /* Make the three flex areas stack */
+  /* Stack the navbar sections vertically */
   .navbar {
     flex-wrap: wrap;
     padding: 10px 10px;
@@ -405,14 +402,14 @@ footer p {
     margin-bottom: 8px;
   }
 
-  /* Keep estimate-btn same size or shrink slightly */
+  /* Slightly shrink estimate-btn on mobile */
   .navbar-center .estimate-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 
-  /* Hamburger remains visible; dropdown stays below  the bar */
+  /* Dropdown sits below the bar (bar is still 80px tall) */
   .nav-links-mobile {
-    top: 100px; /* adjust if your navbar is taller on mobile */
+    top: 100px; /* 80px bar + ~20px gap for mobile stack */
   }
 }
