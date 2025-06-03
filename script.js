@@ -5,8 +5,8 @@ const menuToggle = document.getElementById('mobile-menu');
 const mobileNav = document.getElementById('nav-links-mobile');
 
 menuToggle.addEventListener('click', () => {
+  // Toggle the "open" class on the mobile menu <ul>
   mobileNav.classList.toggle('open');
-
 });
 
 /************************************************

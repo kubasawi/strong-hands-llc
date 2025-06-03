@@ -361,33 +361,37 @@ footer p {
    Responsive (Mobile) Styles
    ======================================== */
 @media (max-width: 768px) {
-  /* 1. Show only the hamburger icon at first */
+  /* 1) Show the hamburger icon and hide the normal desktop links */
   .navbar .menu-toggle {
     display: block;
   }
-  /* 2. Hide the desktop‐style links entirely */
   .navbar .nav-links {
     display: none;
   }
-  /* 3. Hide the mobile links by default (they will appear below on click) */
+
+  /* 2) Hide the mobile‐only links by default (they live below the navbar) */
   .navbar .nav-links-mobile {
-    display: none;           /* keep hidden until someone clicks */
-    flex-direction: column;
-    background-color: #000;  /* same black background */
+    display: none;          /* stay hidden until .open is added */
+    flex-direction: column; /* stack links vertically */
+    background-color: #000; /* same black background as navbar */
     width: 100%;
-    position: absolute;      /* position below the navbar */
-    top: 100%;               /* right below the bottom edge of the navbar */
+    position: absolute;     /* position them “below” the navbar */
+    top: 100%;              /* exactly one navbar‐height down */
     left: 0;
-    z-index: 999;            /* ensure it sits above page content */
+    z-index: 999;           /* keep them above all other page content */
   }
-  /* 4. Stack service items on smaller screens (no change) */
+
+  /* 3) As soon as <ul> has class="open", show it as flex */
+  .navbar .nav-links-mobile.open {
+    display: flex;
+  }
+
+  /* (No other display:flex rule for .nav-links-mobile should exist anywhere.) */
+
+  /* 4) Any other mobile‐only rules (e.g. stacking services) go here… */
   .services-container {
     flex-direction: column;
     align-items: center;
-  }
-    /* When the “open” class is on .nav-links-mobile, show it */
-  .navbar .nav-links-mobile.open {
-    display: flex;   /* now the links appear below the navbar */
   }
 }
 /* =======================================
