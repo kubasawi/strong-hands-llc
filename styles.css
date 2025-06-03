@@ -185,15 +185,15 @@ img {
 #about,
 #gallery,
 #contact {
-  padding-top: 150px;  /* ensures the navbar does not overlap the <h2> titles */
+  padding-top: 150px;  /* ensures the navbar does not overlap the <h2> titles */ :contentReference[oaicite:0]{index=0}
 }
 
 /* ========================================
    6) SERVICES SECTION
    ======================================== */
 section#services {
-  /* slightly reduced vertical spacing */
-  padding-bottom: 40px; /* top‐padding already handled above */
+  /* Reduced vertical spacing: bottom padding is now 20px (half of previous 40px) */
+  padding-bottom: 20px;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -230,7 +230,8 @@ section#services h2 {
    7) ABOUT US SECTION
    ======================================== */
 section#about {
-  padding-bottom: 40px; /* top padding handled above */
+  /* Reduced vertical spacing: bottom padding is now 20px */
+  padding-bottom: 20px;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -262,7 +263,8 @@ section#about p {
    8) GALLERY CAROUSEL
    ======================================== */
 section#gallery {
-  padding-bottom: 40px; /* top padding handled above */
+  /* Reduced vertical spacing: bottom padding is now 20px */
+  padding-bottom: 20px;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -317,7 +319,8 @@ section#gallery h2 {
    9) CONTACT SECTION
    ======================================== */
 section#contact {
-  padding-bottom: 40px; /* top padding handled above */
+  /* Reduced vertical spacing: bottom padding is now 20px */
+  padding-bottom: 20px;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
