@@ -5,11 +5,8 @@ const menuToggle = document.getElementById('mobile-menu');
 const mobileNav = document.getElementById('nav-links-mobile');
 
 menuToggle.addEventListener('click', () => {
-  if (mobileNav.style.display === 'flex') {
-    mobileNav.style.display = 'none';
-  } else {
-    mobileNav.style.display = 'flex';
-  }
+  mobileNav.classList.toggle('open');
+
 });
 
 /************************************************
@@ -67,9 +64,10 @@ let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
+
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY && currentScrollY > 40) {
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
       // Scrolling down & scrolled at least 50px → hide navbar
       navbar.classList.add('hidden');
     } else {
