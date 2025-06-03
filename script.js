@@ -49,9 +49,9 @@ window.addEventListener('scroll', () => {
     backToTopBtn.style.display = 'none';
   }
 
-  // Navbar hide on scroll-down, show on scroll-up
+  // Hide navbar when scrolling down 30px or more, show when scrolling up
   const currentScrollY = window.scrollY;
-  if (currentScrollY > lastScrollY && currentScrollY > 50) {
+  if (currentScrollY > lastScrollY && currentScrollY > 30) {
     document.querySelector('.navbar').classList.add('hidden');
   } else {
     document.querySelector('.navbar').classList.remove('hidden');

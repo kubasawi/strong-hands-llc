@@ -14,6 +14,8 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ========================================
@@ -27,7 +29,8 @@ img {
   background-color: #000; /* black bar */
   display: flex;
   align-items: center;
-  padding: 10px 10px;   /* small padding top/bottom & side */
+  /* Thinner padding: 5px top/bottom, 10px left/right */
+  padding: 5px 10px;
   z-index: 1000;
 }
 
@@ -37,7 +40,7 @@ img {
   text-align: left;
 }
 .navbar-left .logo {
-  height: 80px; /* Logo is now 80px tall */
+  height: 90px; /* Logo is now 90px tall */
 }
 
 /* Center section: estimate button */
@@ -49,7 +52,7 @@ img {
   background-color: #ff6600; /* orange */
   color: #fff;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px; /* slightly smaller on mobile */
   border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
@@ -63,9 +66,9 @@ img {
 .navbar-right {
   flex: 1;
   text-align: right;
-  position: relative; /* so dropdown can position absolute inside */
+  position: relative; /* so dropdown can position absolute */
 }
-/* Hamburger icon */
+/* Hamburger icon (always visible) */
 .menu-toggle {
   display: inline-block;
   font-size: 28px;
@@ -74,18 +77,19 @@ img {
   border: none;
   cursor: pointer;
   line-height: 1;
-  padding: 4px 8px;
+  padding: 4px 8px; /* a bit of padding for easier tapping */
 }
 
-/* Dropdown links (desktop & mobile) – start hidden */
+/* Dropdown links (desktop & mobile) – hidden by default */
 .nav-links-mobile {
-  display: none; 
+  display: none;
   list-style: none;
   flex-direction: column;
   background-color: #000;
   width: 100%;
   position: absolute;
-  top: 80px;   /* sits right below the 80px‐tall navbar */
+  /* Drop-down sits right below the 90px‐tall navbar + 5px padding top/bottom = 95px total */
+  top: 95px;
   right: 0;
   left: 0;
   z-index: 999;
@@ -120,7 +124,8 @@ img {
    3) HERO SECTION
    ======================================== */
 .hero {
-  margin-top: 80px; /* push below the 80px‐tall navbar */
+  /* Push down by 95px so the 90px logo + 5px top padding never overlap */
+  margin-top: 95px;
   padding-top: 40px;
   padding-bottom: 40px;
   background: transparent;
@@ -251,19 +256,22 @@ section#gallery h2 {
   color: #555;
   margin-bottom: 20px;
 }
+/* Make portrait images fit neatly on desktop */
 .carousel-container {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
 }
 .carousel-container img {
-  width: 100%;
-  height: auto;
+  width: auto;            /* no longer 100% width */
+  max-width: 100%;        /* still don’t exceed container width */
+  max-height: 70vh;       /* at most 70% of the viewport height */
   display: none;
   border-radius: 8px;
 }
 .carousel-container img.active {
   display: block;
+  margin: 0 auto;
 }
 .carousel-container button {
   position: absolute;
@@ -373,6 +381,7 @@ footer p {
 /* ========================================
    9) NAVBAR HIDE/SHOW ON SCROLL
    ======================================== */
+/* Hide when user scrolls down 30px, show when they scroll up */
 .navbar {
   transition: transform 0.3s ease-in-out;
 }
@@ -384,32 +393,26 @@ footer p {
    10) RESPONSIVE (MOBILE) STYLES
    ======================================== */
 @media (max-width: 768px) {
-  /* Stack the navbar sections vertically */
+  /* Keep logo, button, ☰ all on one row (do NOT wrap) */
   .navbar {
-    flex-wrap: wrap;
-    padding: 10px 10px;
+    flex-wrap: nowrap;  /* no wrapping on mobile */
+    padding: 5px 10px;  /* same thin padding as desktop */
   }
   .navbar-left,
   .navbar-center,
   .navbar-right {
-    flex: 1 1 100%;
+    flex: 0 1 auto; /* let each take only as much space as needed */
     text-align: center;
   }
-  .navbar-left {
-    margin-bottom: 8px;
-  }
-  .navbar-center {
-    margin-bottom: 8px;
-  }
 
-  /* Slightly shrink estimate-btn on mobile */
+  /* Center the estimate button (no change needed) */
   .navbar-center .estimate-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 
-  /* Dropdown sits below the bar (bar is still 80px tall) */
+  /* Mobile dropdown sits just below the bar (95px total height) */
   .nav-links-mobile {
-    top: 100px; /* 80px bar + ~20px gap for mobile stack */
+    top: 95px; 
   }
 }
