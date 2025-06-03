@@ -31,14 +31,14 @@
        NAVBAR (same on every page)
        =============================== -->
   <nav class="navbar">
-    <!-- Left: Logo (90px tall) -->
+    <!-- Left: Logo (90px tall, flush left) -->
     <div class="navbar-left">
       <a href="index.html">
         <img src="images/logo.png" alt="Strong Hands Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Center: “Get a Free Estimate” button -->
+    <!-- Center: “Get a Free Estimate” button (goes to contact.html) -->
     <div class="navbar-center">
       <button class="estimate-btn" onclick="window.location.href='contact.html';">
         Get a Free Estimate
@@ -67,7 +67,7 @@
       Witness the detail and artistry of our recent projects. From sleek paver patios to timeless brick veneers, every photo tells a story of quality.
     </p>
     <div class="carousel-container">
-      <!-- Fixed image paths (no more “images/gallery/…” prefix) -->
+      <!-- All images load from images/gallery/ -->
       <img class="active" src="images/gallery/1.jpg" alt="Project 1" />
       <img src="images/gallery/2.jpg" alt="Project 2" />
       <img src="images/gallery/3.jpg" alt="Project 3" />
@@ -84,9 +84,8 @@
       <img src="images/gallery/14.jpg" alt="Project 14" />
       <img src="images/gallery/15.jpg" alt="Project 15" />
       <img src="images/gallery/16.jpg" alt="Project 16" />
-      <img src="images/gallery/17.jpg" alt="Project 17" />
       <img src="images/gallery/18.jpg" alt="Project 18" />
-      <img src="images/gallery/19.JPG" alt="Project 19" />
+      <img src="images/gallery/19.jpg" alt="Project 19" />
       <img src="images/gallery/20.jpg" alt="Project 20" />
       <button id="prevBtn">&#10094;</button>
       <button id="nextBtn">&#10095;</button>
@@ -104,7 +103,7 @@
   </footer>
 
   <!-- ========== BACK TO TOP BUTTON ========== -->
-  <button id="backToTop">↑</button>
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <!-- ========== MAIN JS ========== -->
   <script src="script.js"></script>

@@ -10,7 +10,7 @@ body {
   background: #f5f5f5;
 }
 
-/* Make images scale to fit their containers */
+/* Make images scale-down to fit containers */
 img {
   max-width: 100%;
   height: auto;
@@ -29,8 +29,9 @@ img {
   background-color: #000; /* black bar */
   display: flex;
   align-items: center;
-  /* Thinner padding: 5px top/bottom, 10px left/right */
-  padding: 5px 10px;
+  /* Remove left padding so logo is flush at x=0 */
+  /* Keep right padding so the ☰ doesn’t hit the edge */
+  padding: 5px 10px 5px 0; /* top/right/bottom/left */
   z-index: 1000;
 }
 
@@ -52,7 +53,7 @@ img {
   background-color: #ff6600; /* orange */
   color: #fff;
   border: none;
-  padding: 10px 20px; /* slightly smaller on mobile */
+  padding: 10px 20px;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: bold;
@@ -77,7 +78,9 @@ img {
   border: none;
   cursor: pointer;
   line-height: 1;
-  padding: 4px 8px; /* a bit of padding for easier tapping */
+  padding: 4px 8px; /* padding around icon for easier tapping */
+  /* Add a small gap on mobile so it's not pressed right against the button */
+  margin-left: 10px;
 }
 
 /* Dropdown links (desktop & mobile) – hidden by default */
@@ -88,8 +91,8 @@ img {
   background-color: #000;
   width: 100%;
   position: absolute;
-  /* Drop-down sits right below the 90px‐tall navbar + 5px padding top/bottom = 95px total */
-  top: 95px;
+  /* sits right below the bar: 90px logo + 5px top padding = 95px, plus 5px bottom padding = 100px total */
+  top: 100px;
   right: 0;
   left: 0;
   z-index: 999;
@@ -113,6 +116,7 @@ img {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
+  white-space: nowrap; /* prevent wrapping (e.g., “About Us”) */
 }
 .nav-links-mobile li a:hover,
 .nav-links-mobile li a:focus,
@@ -124,8 +128,8 @@ img {
    3) HERO SECTION
    ======================================== */
 .hero {
-  /* Push down by 95px so the 90px logo + 5px top padding never overlap */
-  margin-top: 95px;
+  /* 90px logo + 5px top pad + 5px bottom pad = 100px; this margin pushes content below the bar */
+  margin-top: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
   background: transparent;
@@ -172,7 +176,8 @@ img {
    4) SERVICES SECTION
    ======================================== */
 section#services {
-  padding: 60px 20px;
+  /* Reduced spacing—was 60px top/bottom, now 40px */
+  padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -209,7 +214,8 @@ section#services h2 {
    5) ABOUT US SECTION
    ======================================== */
 section#about {
-  padding: 60px 20px;
+  /* Reduced spacing—was 60px, now 40px */
+  padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -241,7 +247,8 @@ section#about p {
    6) GALLERY CAROUSEL
    ======================================== */
 section#gallery {
-  padding: 60px 20px;
+  /* Reduced spacing—was 60px, now 40px */
+  padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -296,7 +303,8 @@ section#gallery h2 {
    7) CONTACT SECTION
    ======================================== */
 section#contact {
-  padding: 60px 20px;
+  /* Reduced spacing—was 60px, now 40px */
+  padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -381,7 +389,7 @@ footer p {
 /* ========================================
    9) NAVBAR HIDE/SHOW ON SCROLL
    ======================================== */
-/* Hide when user scrolls down 30px, show when they scroll up */
+/* Hide when user scrolls down 10px or more, show when scrolling up */
 .navbar {
   transition: transform 0.3s ease-in-out;
 }
@@ -393,26 +401,26 @@ footer p {
    10) RESPONSIVE (MOBILE) STYLES
    ======================================== */
 @media (max-width: 768px) {
-  /* Keep logo, button, ☰ all on one row (do NOT wrap) */
+  /* Keep logo, button, ☰ all on one row (no wrapping) */
   .navbar {
-    flex-wrap: nowrap;  /* no wrapping on mobile */
-    padding: 5px 10px;  /* same thin padding as desktop */
+    flex-wrap: nowrap;  /* forces single horizontal row */
+    padding: 5px 10px 5px 0; /* same thin padding: top/right/bottom/left */
   }
   .navbar-left,
   .navbar-center,
   .navbar-right {
-    flex: 0 1 auto; /* let each take only as much space as needed */
+    flex: 0 1 auto; /* each takes only as much space as needed */
     text-align: center;
   }
 
-  /* Center the estimate button (no change needed) */
+  /* Keep estimate-btn roughly the same size */
   .navbar-center .estimate-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 
-  /* Mobile dropdown sits just below the bar (95px total height) */
+  /* Dropdown sits just below the bar (100px total height) */
   .nav-links-mobile {
-    top: 95px; 
+    top: 100px; 
   }
 }

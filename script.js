@@ -42,16 +42,16 @@ const backToTopBtn = document.getElementById('backToTop');
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  // Back-to-top visibility
+  // Back-to-top visibility (unchanged)
   if (window.scrollY > 200) {
     backToTopBtn.style.display = 'block';
   } else {
     backToTopBtn.style.display = 'none';
   }
 
-  // Hide navbar when scrolling down 30px or more, show when scrolling up
+  // Hide navbar when scrolling down 10px or more, show when scrolling up
   const currentScrollY = window.scrollY;
-  if (currentScrollY > lastScrollY && currentScrollY > 30) {
+  if (currentScrollY > lastScrollY && currentScrollY > 10) {
     document.querySelector('.navbar').classList.add('hidden');
   } else {
     document.querySelector('.navbar').classList.remove('hidden');

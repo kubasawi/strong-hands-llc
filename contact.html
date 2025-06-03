@@ -31,14 +31,14 @@
        NAVBAR (same on every page)
        =============================== -->
   <nav class="navbar">
-    <!-- Left: Logo (90px tall) -->
+    <!-- Left: Logo (90px tall, flush left) -->
     <div class="navbar-left">
       <a href="index.html">
         <img src="images/logo.png" alt="Strong Hands Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Center: “Get a Free Estimate” button -->
+    <!-- Center: “Get a Free Estimate” button (goes to contact.html) -->
     <div class="navbar-center">
       <button class="estimate-btn" onclick="window.location.href='contact.html';">
         Get a Free Estimate
@@ -65,7 +65,7 @@
     <h2>Contact Us</h2>
     <p>Free Estimates • Licensed &amp; Insured</p>
     <p>Ready to transform your space? Let’s talk.</p>
-    <p>Call Us: (848) 525-7377 or (732) 575-0099</p>
+    <p>Call Us: (848) 525-7377 | (732) 575-0099</p>
     <form class="contact-form">
       <label for="name">Name</label>
       <input id="name" type="text" placeholder="Your Name" />
@@ -102,7 +102,7 @@
   </footer>
 
   <!-- ========== BACK TO TOP BUTTON ========== -->
-  <button id="backToTop">↑</button>
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <!-- ========== MAIN JS ========== -->
   <script src="script.js"></script>
