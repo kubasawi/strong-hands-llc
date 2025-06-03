@@ -42,7 +42,7 @@ const backToTopBtn = document.getElementById('backToTop');
 let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  // Back-to-top visibility (unchanged)
+  // Back-to-top visibility
   if (window.scrollY > 200) {
     backToTopBtn.style.display = 'block';
   } else {

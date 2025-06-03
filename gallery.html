@@ -11,7 +11,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Load Agency FB from your local fonts folder -->
+  <!-- Load Agency FB -->
   <style>
     @font-face {
       font-family: "AgencyFB";
@@ -28,24 +28,24 @@
   <div class="background"></div>
 
   <!-- ===============================
-       NAVBAR (same on every page)
+       NAVBAR
        =============================== -->
   <nav class="navbar">
-    <!-- Left: Logo (90px tall, flush left) -->
+    <!-- Left: Logo -->
     <div class="navbar-left">
       <a href="index.html">
         <img src="images/logo.png" alt="Strong Hands Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Center: “Get a Free Estimate” button (goes to contact.html) -->
+    <!-- Center: Get a Free Estimate -->
     <div class="navbar-center">
       <button class="estimate-btn" onclick="window.location.href='contact.html';">
         Get a Free Estimate
       </button>
     </div>
 
-    <!-- Right: Hamburger + hidden dropdown links -->
+    <!-- Right: Hamburger + dropdown -->
     <div class="navbar-right">
       <button id="mobile-menu" class="menu-toggle" aria-label="Toggle menu">
         ☰
@@ -67,7 +67,6 @@
       Witness the detail and artistry of our recent projects. From sleek paver patios to timeless brick veneers, every photo tells a story of quality.
     </p>
     <div class="carousel-container">
-      <!-- All images load from images/gallery/ -->
       <img class="active" src="images/gallery/1.jpg" alt="Project 1" />
       <img src="images/gallery/2.jpg" alt="Project 2" />
       <img src="images/gallery/3.jpg" alt="Project 3" />
@@ -108,7 +107,6 @@
   <!-- ========== MAIN JS ========== -->
   <script src="script.js"></script>
   <script>
-    // Auto-update year in footer
     document.getElementById('year').innerText = new Date().getFullYear();
   </script>
 </body>

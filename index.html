@@ -11,7 +11,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Load Agency FB from your local fonts folder -->
+  <!-- Load Agency FB -->
   <style>
     @font-face {
       font-family: "AgencyFB";
@@ -28,24 +28,25 @@
   <div class="background"></div>
 
   <!-- ===============================
-       NAVBAR (same on every page)
+       NAVBAR
        =============================== -->
   <nav class="navbar">
-    <!-- Left: Logo (90px tall, flush left at x=0) -->
+    <!-- Left: Logo -->
     <div class="navbar-left">
       <a href="index.html">
         <img src="images/logo.png" alt="Strong Hands Logo" class="logo" />
       </a>
     </div>
 
-    <!-- Center: “Get a Free Estimate” button (scrolls to #contact on this page) -->
+    <!-- Center: Get a Free Estimate (scroll to contact on same page) -->
     <div class="navbar-center">
-      <button class="estimate-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+      <button class="estimate-btn"
+              onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
         Get a Free Estimate
       </button>
     </div>
 
-    <!-- Right: Hamburger + hidden dropdown links -->
+    <!-- Right: Hamburger + dropdown -->
     <div class="navbar-right">
       <button id="mobile-menu" class="menu-toggle" aria-label="Toggle menu">
         ☰
@@ -130,7 +131,6 @@
       Witness the detail and artistry of our recent projects. From sleek paver patios to timeless brick veneers, every photo tells a story of quality.
     </p>
     <div class="carousel-container">
-      <!-- Images now load from images/gallery/ folder -->
       <img class="active" src="images/gallery/1.jpg" alt="Project 1" />
       <img src="images/gallery/2.jpg" alt="Project 2" />
       <img src="images/gallery/3.jpg" alt="Project 3" />
@@ -187,7 +187,6 @@
   <!-- ========== MAIN JS ========== -->
   <script src="script.js"></script>
   <script>
-    // Auto-update year in footer
     document.getElementById('year').innerText = new Date().getFullYear();
   </script>
 </body>

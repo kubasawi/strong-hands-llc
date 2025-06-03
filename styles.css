@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "AgencyFB", sans-serif; /* Agency FB everywhere */
+  font-family: "AgencyFB", sans-serif;
   color: #333;
   line-height: 1.5;
   background: #f5f5f5;
@@ -26,31 +26,31 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #000; /* black bar */
+  background-color: #000;
   display: flex;
   align-items: center;
-  /* Remove left padding so logo is flush at x=0 */
-  /* Keep right padding so the ☰ doesn’t hit the edge */
-  padding: 5px 10px 5px 0; /* top/right/bottom/left */
+  justify-content: space-between;  /* logo left, button center, ☰ right */
+  /* Padding: top 5px, right 10px, bottom 5px, left 0 */
+  padding: 5px 10px 5px 0;
   z-index: 1000;
 }
 
 /* Left section: logo */
 .navbar-left {
-  flex: 1;
+  flex: 0 1 auto;  /* only as wide as the logo itself */
   text-align: left;
 }
 .navbar-left .logo {
-  height: 90px; /* Logo is now 90px tall */
+  height: 90px;  /* Logo is 90px tall */
 }
 
 /* Center section: estimate button */
 .navbar-center {
-  flex: 1;
+  flex: 0 1 auto;
   text-align: center;
 }
 .navbar-center .estimate-btn {
-  background-color: #ff6600; /* orange */
+  background-color: #ff6600;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -65,11 +65,11 @@ img {
 
 /* Right section: hamburger + hidden links */
 .navbar-right {
-  flex: 1;
+  flex: 0 1 auto;
   text-align: right;
-  position: relative; /* so dropdown can position absolute */
+  position: relative;
 }
-/* Hamburger icon (always visible) */
+/* Hamburger icon */
 .menu-toggle {
   display: inline-block;
   font-size: 28px;
@@ -78,12 +78,11 @@ img {
   border: none;
   cursor: pointer;
   line-height: 1;
-  padding: 4px 8px; /* padding around icon for easier tapping */
-  /* Add a small gap on mobile so it's not pressed right against the button */
-  margin-left: 10px;
+  padding: 4px 12px;  /* extra left/right padding so the icon isn't cramped */
+  /* No manual margin-left—flex: space-between will handle spacing */
 }
 
-/* Dropdown links (desktop & mobile) – hidden by default */
+/* Dropdown links – start hidden */
 .nav-links-mobile {
   display: none;
   list-style: none;
@@ -91,7 +90,7 @@ img {
   background-color: #000;
   width: 100%;
   position: absolute;
-  /* sits right below the bar: 90px logo + 5px top padding = 95px, plus 5px bottom padding = 100px total */
+  /* sits just below the bar: 90px logo + 5px top pad + 5px bottom pad = 100px total */
   top: 100px;
   right: 0;
   left: 0;
@@ -99,7 +98,6 @@ img {
   margin: 0;
   padding: 0;
 }
-/* When “open” class is added by JS, show it */
 .nav-links-mobile.open {
   display: flex;
 }
@@ -112,11 +110,12 @@ img {
 }
 .nav-links-mobile li a {
   display: block;
-  padding: 12px 0;
+  /* 20px left/right padding so links are wide enough */
+  padding: 12px 20px;
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
-  white-space: nowrap; /* prevent wrapping (e.g., “About Us”) */
+  white-space: nowrap;  /* prevent “About Us” from wrapping */
 }
 .nav-links-mobile li a:hover,
 .nav-links-mobile li a:focus,
@@ -125,10 +124,10 @@ img {
 }
 
 /* ========================================
-   3) HERO SECTION
+   3) HERO SECTION (homepage only)
    ======================================== */
 .hero {
-  /* 90px logo + 5px top pad + 5px bottom pad = 100px; this margin pushes content below the bar */
+  /* 90px logo + 5px top pad + 5px bottom pad = 100px margin to clear the bar */
   margin-top: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -139,18 +138,18 @@ img {
   font-size: 48px;
   color: #222;
   margin: 0;
-  text-transform: uppercase; /* all caps */
+  text-transform: uppercase;
 }
 .hero h2 {
   font-size: 24px;
   font-weight: normal;
   color: #555;
-  margin: 15px 0 0 0;
+  margin: 15px 0 0;
 }
 .hero .location {
   font-size: 24px;
   color: #555;
-  margin: 15px 0 0 0;
+  margin: 15px 0 0;
 }
 .hero .phone-numbers {
   margin: 20px 0;
@@ -173,10 +172,19 @@ img {
 }
 
 /* ========================================
-   4) SERVICES SECTION
+   4) FIRST SECTION OFFSET (subpages)
+   ======================================== */
+/* Any first <section> that is not .hero must be pushed down */
+section:not(.hero):first-of-type {
+  /* Same 100px offset as the homepage’s hero */
+  margin-top: 100px;
+}
+
+/* ========================================
+   5) SERVICES SECTION
    ======================================== */
 section#services {
-  /* Reduced spacing—was 60px top/bottom, now 40px */
+  /* Slightly reduced vertical spacing */
   padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
@@ -211,10 +219,9 @@ section#services h2 {
 }
 
 /* ========================================
-   5) ABOUT US SECTION
+   6) ABOUT US SECTION
    ======================================== */
 section#about {
-  /* Reduced spacing—was 60px, now 40px */
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -244,10 +251,9 @@ section#about p {
 }
 
 /* ========================================
-   6) GALLERY CAROUSEL
+   7) GALLERY CAROUSEL
    ======================================== */
 section#gallery {
-  /* Reduced spacing—was 60px, now 40px */
   padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
@@ -263,16 +269,16 @@ section#gallery h2 {
   color: #555;
   margin-bottom: 20px;
 }
-/* Make portrait images fit neatly on desktop */
+/* Portrait images capped on desktop */
 .carousel-container {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
 }
 .carousel-container img {
-  width: auto;            /* no longer 100% width */
-  max-width: 100%;        /* still don’t exceed container width */
-  max-height: 70vh;       /* at most 70% of the viewport height */
+  width: auto;
+  max-width: 100%;
+  max-height: 70vh;
   display: none;
   border-radius: 8px;
 }
@@ -300,10 +306,9 @@ section#gallery h2 {
 }
 
 /* ========================================
-   7) CONTACT SECTION
+   8) CONTACT SECTION
    ======================================== */
 section#contact {
-  /* Reduced spacing—was 60px, now 40px */
   padding: 40px 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -359,7 +364,7 @@ section#contact p {
 }
 
 /* ========================================
-   8) FOOTER & BACK-TO-TOP
+   9) FOOTER & BACK-TO-TOP BUTTON
    ======================================== */
 footer {
   background-color: #222;
@@ -371,25 +376,29 @@ footer {
 footer p {
   margin: 0;
 }
+
+/* Make the back-to-top button a perfect circle */
 #backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;   /* vertically center the arrow */
+  text-align: center;  /* horizontally center the arrow */
+  border-radius: 50%;
+  font-size: 24px;
   background-color: #ff6600;
   color: #fff;
   border: none;
-  padding: 12px;
-  border-radius: 50%;
-  font-size: 18px;
+  display: none;       /* hidden until scroll down */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
   cursor: pointer;
-  display: none;
   z-index: 1000;
 }
 
 /* ========================================
-   9) NAVBAR HIDE/SHOW ON SCROLL
+   10) NAVBAR HIDE/SHOW ON SCROLL
    ======================================== */
-/* Hide when user scrolls down 10px or more, show when scrolling up */
 .navbar {
   transition: transform 0.3s ease-in-out;
 }
@@ -398,29 +407,25 @@ footer p {
 }
 
 /* ========================================
-   10) RESPONSIVE (MOBILE) STYLES
+   11) RESPONSIVE (MOBILE) STYLES
    ======================================== */
 @media (max-width: 768px) {
-  /* Keep logo, button, ☰ all on one row (no wrapping) */
   .navbar {
-    flex-wrap: nowrap;  /* forces single horizontal row */
-    padding: 5px 10px 5px 0; /* same thin padding: top/right/bottom/left */
+    flex-wrap: nowrap;       /* keep all three items on one row */
+    padding: 5px 10px 5px 0; /* same as desktop */
   }
   .navbar-left,
   .navbar-center,
   .navbar-right {
-    flex: 0 1 auto; /* each takes only as much space as needed */
-    text-align: center;
+    flex: 0 1 auto;          /* only as wide as their content */
   }
 
-  /* Keep estimate-btn roughly the same size */
   .navbar-center .estimate-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 
-  /* Dropdown sits just below the bar (100px total height) */
   .nav-links-mobile {
-    top: 100px; 
+    top: 100px;  /* same vertical offset below the bar */
   }
 }
