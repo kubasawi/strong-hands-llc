@@ -96,7 +96,7 @@ img {
   list-style: none;
   flex-direction: column;
   background-color: #000;
-  width: 100vw;             /* full viewport width */
+  width: 100%;              /* changed from 100vw to 100% */
   position: absolute;
   /* sits just below the bar: 90px logo + 5px top pad + 5px bottom pad = 100px, plus 10px breathing room = 110 */
   top: 110px;
@@ -182,9 +182,9 @@ img {
 /* ========================================
    5) FIRST SECTION OFFSET (subpages)
    ======================================== */
-/* Push every first <section> (that is not .hero) down by 110px so nothing sits under the fixed bar */
+/* Push every first <section> (that is not .hero) down by 150px so nothing sits under the fixed bar */
 section:not(.hero):first-of-type {
-  margin-top: 110px;
+  margin-top: 150px;  /* increased from 110px to 150px */
 }
 
 /* ========================================
